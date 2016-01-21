@@ -24,6 +24,7 @@ install:
     - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then ls -l $(brew --prefix)/Cellar/qt5; fi
     - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then ls -l $(brew --prefix)/opt; fi
     - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then ls -l $(brew --prefix)/opt/qt5; fi
+    - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then export PATH=$(brew --prefix)/opt/qt5/bin:$PATH; fi
 
 script:
     - qmake
