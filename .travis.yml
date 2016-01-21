@@ -11,8 +11,8 @@ os:
     - osx
 
 env:
-  - BUILD_MODE=Release
-  - BUILD_MODE=Debug
+  - BUILD_MODE=release
+  - BUILD_MODE=debug
 
 install:
     - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then sudo apt-get -y update -qq && sudo apt-get -y install qt5-default; fi
@@ -21,6 +21,8 @@ install:
     - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then export PATH=$(brew --prefix)/opt/qt5/bin:$PATH; fi
 
 script:
+    - mkdir build
+    - cd build
     - qmake CONFIG+=${BUILD_MODE}
     - make
     - ls -lRa .
