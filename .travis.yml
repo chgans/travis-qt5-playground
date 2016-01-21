@@ -28,6 +28,7 @@ install:
     - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then export PATH=$(brew --prefix)/opt/qt5/bin:$PATH; fi
 
 script:
+    - echo "Building for ${MKSPEC} in ${BUILD_MODE} mode..."
     - mkdir build
     - cd build
     - qmake ../travis-qt5-playground.pro -spec ${MKSPEC} CONFIG+=${BUILD_MODE}
