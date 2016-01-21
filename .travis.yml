@@ -3,11 +3,11 @@ dist: trusty
 language: cpp
 
 compiler:
-    - clang
+    #- clang
     - gcc
 
 os:
-    - linux
+    #- linux
     - osx
 
 env:
