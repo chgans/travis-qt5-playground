@@ -16,7 +16,7 @@ env:
 
 install:
     - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then sudo apt-get -y update -qq && sudo apt-get -y install qt5-default; fi
-    - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then brew update && brew install qt5; find /usr/local/opt/qt5 -type d; find /usr/local/opt/qt5 -type f -executable; fi
+    - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then brew update && brew install qt5; find /usr/local/opt/qt5 -type d; find /usr/local/opt/qt5 -name qmake; fi
 
 script:
     - qmake
