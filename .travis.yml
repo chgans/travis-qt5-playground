@@ -14,13 +14,12 @@ env:
   - BUILD_MODE=release
   - BUILD_MODE=debug
 
-# linux-g++, linux-clang, macx-clang, macx-g++
 install:
-    - if [ "${TRAVIS_OS_NAME}" = "linux" -a "${CXX}" = "clang++"]; then MKSPEC=linux-clang; fi
-    - if [ "${TRAVIS_OS_NAME}" = "linux" -a "${CXX}" = "g++"]; then MKSPEC=linux-g++; fi
+    - if [ "${TRAVIS_OS_NAME}" = "linux" -a "${CXX}" = "clang++"]; then export MKSPEC=linux-clang; fi
+    - if [ "${TRAVIS_OS_NAME}" = "linux" -a "${CXX}" = "g++"]; then export MKSPEC=linux-g++; fi
 
-    - if [ "${TRAVIS_OS_NAME}" = "osx" -a "${CXX}" = "clang++"]; then MKSPEC=macx-clang; fi
-    - if [ "${TRAVIS_OS_NAME}" = "osx" -a "${CXX}" = "g++"]; then MKSPEC=macx-g++; fi
+    - if [ "${TRAVIS_OS_NAME}" = "osx" -a "${CXX}" = "clang++"]; then export MKSPEC=macx-clang; fi
+    - if [ "${TRAVIS_OS_NAME}" = "osx" -a "${CXX}" = "g++"]; then export MKSPEC=macx-g++; fi
 
     - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then sudo apt-get -y update -qq && sudo apt-get -y install qt5-default; fi
 
