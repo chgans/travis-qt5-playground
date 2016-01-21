@@ -19,7 +19,8 @@ install:
     - # if [ "${TRAVIS_OS_NAME}" = "osx" ]; then brew update; fi
     - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then brew install qt5; fi
     - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then echo $(brew --prefix); fi
-    - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then find $(brew --prefix) -name 'q*' -o -name '*qt*' -o -name '*Qt*'; fi
+    - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then find $(brew --prefix)/Cellar/qt5 -name 'q*' -o -name '*Qt*'; fi
+    - if [ "${TRAVIS_OS_NAME}" = "osx" ]; then find $(brew --prefix)/opt/qt5 -name 'q*' -o -name '*Qt*'; fi
 
 script:
     - qmake
