@@ -12,7 +12,7 @@ os:
 
 env:
   - CONFIG=Release
-  - CONFIG=Debug
+  #- CONFIG=Debug
 
 install:
     - if [ "${TRAVIS_OS_NAME}" = "linux" ]; then sudo apt-get -y update -qq && sudo apt-get -y install qt5-default; fi
